@@ -1,0 +1,44 @@
+{
+  "credentials_path": {
+    "description": "Google OAuth client credentials JSON path. Download from Google Cloud Console OAuth client.",
+    "type": "string",
+    "default": "",
+    "hint": "建议填写绝对路径，例如 /home/jing/.config/astrbot/google_oauth_client.json"
+  },
+  "token_path": {
+    "description": "Path used to store OAuth token JSON after first authorization.",
+    "type": "string",
+    "default": "",
+    "hint": "留空则默认保存到插件目录 token.json；建议填绝对路径并注意权限。"
+  },
+  "calendar_id": {
+    "description": "Google Calendar ID used when creating events.",
+    "type": "string",
+    "default": "primary",
+    "hint": "默认 primary，即主日历。"
+  },
+  "tasklist_id": {
+    "description": "Google Tasks tasklist ID used when creating tasks.",
+    "type": "string",
+    "default": "@default",
+    "hint": "默认 @default，即默认任务列表。"
+  },
+  "default_timezone": {
+    "description": "Default timezone for date/time fields without timezone.",
+    "type": "string",
+    "default": "Asia/Shanghai",
+    "hint": "例如 Asia/Shanghai, America/Los_Angeles。"
+  },
+  "default_event_duration_minutes": {
+    "description": "Default event duration when end time is missing.",
+    "type": "int",
+    "default": 60,
+    "hint": "LLM 工具未提供结束时间时使用。"
+  },
+  "enable_command_fallback": {
+    "description": "Enable command wrappers /gcal_event and /gtask_create using simple JSON arguments.",
+    "type": "bool",
+    "default": true,
+    "hint": "LLM tool 是主要入口；命令用于测试。"
+  }
+}
