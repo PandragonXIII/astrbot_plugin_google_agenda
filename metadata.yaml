@@ -1,4 +1,4 @@
 name: "astrbot_plugin_google_agenda"
 desc: "Create Google Calendar events and Google Tasks from AstrBot commands or LLM tools"
-version: "0.1.0"
+version: "0.1.1"
 author: "AA"

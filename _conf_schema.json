@@ -5,12 +5,6 @@
     "default": "",
     "hint": "建议填写绝对路径，例如 /home/jing/.config/astrbot/google_oauth_client.json"
   },
-  "token_path": {
-    "description": "Path used to store OAuth token JSON after first authorization.",
-    "type": "string",
-    "default": "",
-    "hint": "留空则默认保存到插件目录 token.json；建议填绝对路径并注意权限。"
-  },
   "calendar_id": {
     "description": "Google Calendar ID used when creating events.",
     "type": "string",
@@ -40,5 +34,23 @@
     "type": "bool",
     "default": true,
     "hint": "LLM tool 是主要入口；命令用于测试。"
+  },
+  "auth_port": {
+    "description": "Fixed local OAuth callback port for SSH tunnel authorization.",
+    "type": "int",
+    "default": 8765,
+    "hint": "远程 CLI 推荐固定端口，例如 8765；本地电脑执行 ssh -L 8765:127.0.0.1:8765 user@server。"
+  },
+  "auth_timeout_seconds": {
+    "description": "OAuth callback listener timeout in seconds.",
+    "type": "int",
+    "default": 300,
+    "hint": "授权 URL 有效等待时间。"
+  },
+  "auth_ssh_target": {
+    "description": "SSH target shown in /gagenda_auth_url output.",
+    "type": "string",
+    "default": "",
+    "hint": "例如 jing@your-server 或 user@1.2.3.4；留空则用 user@hostname 作为提示。"
   }
 }
